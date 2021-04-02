@@ -1,19 +1,19 @@
 module.exports = {
-  title: 'Chrichri blog',
-  tagline: 'Welcom to my personal blog',
+  title: 'Christophe Menager',
+  tagline: 'Welcome to my personal blog',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.png',
   organizationName: 'christophemenager', 
-  projectName: 'chrichri-nlog', 
+  projectName: 'christophem-blog', 
   themeConfig: {
     navbar: {
-      title: "Chrichri's blog",
+      title: "Christophe Menager",
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
@@ -22,10 +22,6 @@ module.exports = {
           position: 'right',
         },
       ],
-    },
-    footer: {
-      style: 'light',
-      copyright: `Copyright © ${new Date().getFullYear()} Christophe Menager`,
     },
   },
   presets: [
@@ -36,6 +32,8 @@ module.exports = {
         blog: {
           path: './blog',
           routeBasePath: '/',
+          blogTitle: 'My personal tech blog',
+          blogDescription: 'A tech blog about react native, personal development, and many other things',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
