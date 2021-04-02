@@ -21,7 +21,23 @@ module.exports = {
           label: 'GitHub',
           position: 'right',
         },
+        {
+          type: 'localeDropdown',
+          position: 'left',
+        },
       ],
+    },
+  },
+  i18n: {
+    defaultLocale: 'fr',
+    locales: ['en', 'fr'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+      },
+      fr: {
+        label: 'Français',
+      },
     },
   },
   presets: [
