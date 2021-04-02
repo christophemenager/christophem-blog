@@ -4,19 +4,19 @@ title: Hello world
 author_url: https://github.com/christophemenager
 ---
 
-Welcome to my blog.
+Bienvenue sur mon blog
 
 <!--truncate-->
 
-## A few words about me
+## A propos de moi
 
 // @TODO
 
-## Why this blog ?
+## Pourquoi lancer un blog ?
 
-This blog is created with [**Docusaurus 2 alpha**](https://v2.docusaurus.io/).
+J'ai concu ce blog avec [**Docusaurus 2 alpha**](https://v2.docusaurus.io/).
 // @TODO
 
-## What kind of content will be published ?
+## Quel type de contenu sera publié ?
 
 // @TODO
