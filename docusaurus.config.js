@@ -1,19 +1,19 @@
 module.exports = {
   title: 'Christophe Menager',
   tagline: 'Welcome to my personal blog',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://chrichri.netlify.app/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/logo.png',
-  organizationName: 'christophemenager', 
-  projectName: 'christophem-blog', 
+  favicon: 'assets/images/logo.png',
+  organizationName: 'christophemenager',
+  projectName: 'christophem-blog',
   themeConfig: {
     navbar: {
-      title: "Christophe Menager",
+      title: 'Christophe Menager',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.png',
+        src: 'assets/images/logo.png',
       },
       items: [
         {
@@ -48,8 +48,11 @@ module.exports = {
         blog: {
           path: './blog',
           routeBasePath: '/',
-          blogTitle: 'My personal tech blog',
-          blogDescription: 'A tech blog about react native, personal development, and many other things',
+          blogTitle: 'My blog, written in french, translated in english',
+          blogDescription: 'A blog to talk about tech, personal development, and many other things',
+          feedOptions: {
+            type: 'all',
+          },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
