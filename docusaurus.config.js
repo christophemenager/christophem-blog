@@ -50,9 +50,6 @@ module.exports = {
           routeBasePath: '/',
           blogTitle: 'My blog, written in french, translated in english',
           blogDescription: 'A blog to talk about tech, personal development, and many other things',
-          feedOptions: {
-            type: 'all',
-          },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
