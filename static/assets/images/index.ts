@@ -1,4 +1,4 @@
 export const images = {
-  blankPhone: require('./blank-iphone.png'),
+  deviceFrame: require('./deviceFrame.png'),
   blogLogo: require('./logo.png'),
 };

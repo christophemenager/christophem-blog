@@ -1,0 +1,85 @@
+---
+slug: scrollview-style
+title: Ne jamais utiliser la prop style sur une ScrollView
+author_url: https://github.com/christophemenager
+tags: [hard-tech]
+---
+
+Sur une ScrollView, vous pouvez utiliser **style** et **contentContainerStyle** pour le style.
+Dans cet article, je vais vous expliquer pourquoi dans 90% des cas c'est **contentContainerStyle** qu'il vous faut.
+
+<!--truncate-->
+
+import { PhoneView } from '../src/components/PhoneView.tsx';
+import { ScrollViewWithButton } from '../src/components/ScrollViewWithButton.tsx';
+import { StickyFooter } from '../src/components/StickyFooter.tsx';
+
+# Introduction
+
+🗓 **Lundi 3 mai 8h00**
+
+Après un week-end de travail acharné, vous rendez comme prévu votre projet à votre chef.
+"Lundi matin 8h vous avait il gentiment exigé en filant au golf vendredi après-midi."
+
+Son cahier des charges ? Afficher du texte et un bouton dans une page que l'on peut scroller. Au bas de cette page, afficher un "footer" qui ne bouge jamais meme quand on scroll.
+
+Votre réalisation:
+
+```tsx title="/App.tsx"
+<PhoneView>
+  <ScrollViewWithButton />
+  <StickyFooter />
+</PhoneView>
+```
+
+<PhoneView>
+  <ScrollViewWithButton />
+  <StickyFooter />
+</PhoneView>
+
+🗓 **Lundi 3 mai 8h30**
+
+Une chance, votre chef adore ! Il est tombé sous le charme du texte qui semble apparaitre et disparaitre sous le footer quand on scroll.
+Il a juste une petite réserve : le texte et le bouton sont tout de même un peu proche des bords.
+Il aimerait ces changements sur son bureau "pour hier".
+
+🗓 **Lundi 3 mai 8h35**
+
+Pas de panique, vous faites comme d'habitude : un peu de margin sur la prop style de cette ScrollView et le tour est joué :
+
+```tsx title="/App.tsx"
+<PhoneView>
+  <ScrollViewWithButton style={{ margin: 20 }} />
+  <StickyFooter />
+</PhoneView>
+```
+
+<PhoneView>
+  <ScrollViewWithButton style={{ margin: 20 }} />
+  <StickyFooter />
+</PhoneView>
+
+Ca vous semble top, et vous courrez voir votre chef.
+
+🗓 **Lundi 3 mai 8h40**
+
+C'est la douche froide : "Je n'ai plus l'impression que le texte disarait sous le bouton, en 40 ans de carrière, je n'ai jamais été aussi décu."
+
+🗓 **Lundi 3 mai 23h59**
+
+Après plus de 15h d'investigation, vous testez à tout hasard d'utiliser **contentContainerStyle** que vous avez vu dans [la documentation](https://reactnative.dev/docs/scrollview#contentcontainerstyle).
+Pour une raison assez obscure, ca semble marcher ! Vous vous empressez d'envoyer tout ca avant que minuit ne sonne : votre chef vous remercie (et vous rapelle une autre deadline pour demain matin 7h).
+
+```tsx title="/App.tsx"
+<PhoneView>
+  <ScrollViewWithButton contentContainerStyle={{ margin: 20 }} />
+  <StickyFooter />
+</PhoneView>
+```
+
+<PhoneView>
+  <ScrollViewWithButton contentContainerStyle={{ margin: 20 }} />
+  <StickyFooter />
+</PhoneView>
+
+# Apprentissages

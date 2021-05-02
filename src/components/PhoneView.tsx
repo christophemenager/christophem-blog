@@ -1,15 +1,19 @@
 import React, { FC } from 'react';
-import { View } from 'react-native-web';
+import { ImageBackground, View } from 'react-native-web';
 
 export const PhoneView: FC = ({ children }) => (
-  <View
-    style={{
-      height: 400,
-      width: 200,
-      borderWidth: 1,
-      borderColor: '#1c6afb',
-    }}
-  >
-    {children}
+  <View style={{ flex: 1, alignItems: 'center', marginVertical: 15 }}>
+    <ImageBackground
+      style={{
+        width: 200,
+        height: 400,
+        paddingVertical: 22,
+        paddingHorizontal: 11,
+      }}
+      resizeMode="contain"
+      source={'../../static/assets/images/deviceFrame.png'}
+    >
+      <View style={{ flex: 1 }}>{children}</View>
+    </ImageBackground>
   </View>
 );
